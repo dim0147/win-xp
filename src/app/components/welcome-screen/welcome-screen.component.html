@@ -1,0 +1,10 @@
+<!--Showing when Image load finish and the screen is welcome screen--->
+<div
+  class="container"
+  [style.display]="isWelcomeScreen && imgLoadFinish ? 'initial' : 'none'"
+>
+  <img
+    src="assets/Win-XP/welcome.png"
+    alt=""
+    (load)="onImgLoadFinish($event)">
+</div>

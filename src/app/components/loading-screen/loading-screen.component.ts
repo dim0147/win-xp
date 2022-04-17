@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { MouseService } from '../../services/mouse.service';
 
 @Component({
   selector: 'app-loading-screen',
@@ -10,10 +11,14 @@ import { Title } from '@angular/platform-browser';
 export class LoadingScreenComponent implements OnInit {
   @Output() loadingFinishEvent = new EventEmitter<void>();
 
-  constructor(private titleService: Title) {}
+  constructor(
+    private titleService: Title,
+    private mouseService: MouseService
+  ) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle("Starting Win XP...");
+    this.titleService.setTitle('Starting Win XP...');
+    this.mouseService.hideCursor(); // Hide cursor
   }
 
   /**
@@ -22,7 +27,7 @@ export class LoadingScreenComponent implements OnInit {
    * @param event
    */
   onImgLoaded(event: Event): void {
-    const secondToWaitingBeforeEmitEvent = 2000;
+    const secondToWaitingBeforeEmitEvent = 3000;
 
     setTimeout(() => {
       this.loadingFinishEvent.emit();

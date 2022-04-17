@@ -1,9 +1,26 @@
-<style>
-  * {
-
-  }
-</style>
-
 <div class="container">
-  <app-loading-screen (loadingFinishEvent)="onBootLoadingFinished()"></app-loading-screen>
+
+  <!--  Boot loading-->
+  <app-loading-screen
+    *ngIf="screen === 'boot-loading'"
+    (loadingFinishEvent)="onBootLoadingFinished()"
+  >
+  </app-loading-screen>
+
+  <!--  Flicker screen-->
+  <app-flicker-screen
+    *ngIf="isFlickerScreen()"
+    (flickerScreenFinishEvent)="onFlickerScreenFinished()"
+  >
+  </app-flicker-screen>
+
+  <!--  Welcome screen-->
+  <app-welcome-screen
+    [imgLoadFinish]="welcomeScreenImgLoadFinish"
+    [isWelcomeScreen]="screen === 'welcome-screen'"
+    (imgLoadFinishEvent)="onWelcomeScreenImgLoadFinish()"
+    (welcomeScreenFinishEvent)="onWelcomeScreenFinished()"
+  >
+  </app-welcome-screen>
+
 </div>

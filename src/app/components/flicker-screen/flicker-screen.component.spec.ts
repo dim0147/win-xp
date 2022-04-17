@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LoadingScreenComponent } from './loading-screen.component';
+import { FlickerScreenComponent } from './flicker-screen.component';
 
-describe('LoadingScreenComponent', () => {
-  let component: LoadingScreenComponent;
-  let fixture: ComponentFixture<LoadingScreenComponent>;
+describe('FlickerScreenComponent', () => {
+  let component: FlickerScreenComponent;
+  let fixture: ComponentFixture<FlickerScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LoadingScreenComponent],
+      declarations: [FlickerScreenComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoadingScreenComponent);
+    fixture = TestBed.createComponent(FlickerScreenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
