@@ -74,7 +74,7 @@ export class WelcomeScreenComponent implements OnChanges {
   }
 
   /**
-   * Prepare for show default cursor
+   * Prepare for emit event
    */
   prepareEmitScreenFinish(): void {
     const secondWaitingBeforeEmitEvent = 1000;
