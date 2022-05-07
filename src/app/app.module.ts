@@ -6,6 +6,7 @@ import { LoadingScreenComponent } from './components/loading-screen/loading-scre
 import { FlickerScreenComponent } from './components/flicker-screen/flicker-screen.component';
 import { WelcomeScreenComponent } from './components/welcome-screen/welcome-screen.component';
 import { DesktopScreenComponent } from './components/desktop-screen/desktop-screen.component';
+import { InitScreenComponent } from './components/init-screen/init-screen.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { DesktopScreenComponent } from './components/desktop-screen/desktop-scre
     FlickerScreenComponent,
     WelcomeScreenComponent,
     DesktopScreenComponent,
+    InitScreenComponent,
   ],
   imports: [BrowserModule],
   providers: [],

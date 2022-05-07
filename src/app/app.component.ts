@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 type Screen =
+  | 'init-screen'
   | 'boot-loading'
   | 'flicker-screen'
   | 'welcome-screen'
@@ -13,12 +14,21 @@ type Screen =
 })
 export class AppComponent implements OnInit {
   title = 'Win XP';
-  screen: Screen = 'boot-loading';
+  screen: Screen = 'init-screen';
   welcomeScreenImgLoadFinish: boolean = false;
+  desktopScreenImgLoadFinish: boolean = false;
 
   constructor() {}
 
   ngOnInit() {}
+
+  /**
+   * Click Init Button Event
+   */
+  onClickBtnInitScreen(): void {
+    console.log('Init Screen Done');
+    this.screen = 'boot-loading'; // Set next screen
+  }
 
   /**
    * Boot loading finish
@@ -61,5 +71,13 @@ export class AppComponent implements OnInit {
   onWelcomeScreenImgLoadFinish(): void {
     console.log('Load Welcome Image done');
     this.welcomeScreenImgLoadFinish = true;
+  }
+
+  /**
+   * Called when desktop screen image load finish
+   */
+  onDesktopScreenImgLoadFinish(): void {
+    console.log('Load Desktop Image done');
+    this.desktopScreenImgLoadFinish = true;
   }
 }

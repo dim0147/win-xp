@@ -1,1 +1,10 @@
-<p>desktop-screen works!</p>
+<!--Showing when Image load finish and the screen is desktop screen--->
+<div
+  class="container"
+  [style.display]="isDesktopScreen && imgLoadFinish ? 'initial' : 'none'"
+>
+  <img
+    src="assets/Win-XP/desktop-background.webp"
+    alt=""
+    (load)="onImgLoadFinish($event)">
+</div>

@@ -1,6 +1,13 @@
 <div class="container">
 
   <!--  Boot loading-->
+  <app-init-screen
+    *ngIf="screen === 'init-screen'"
+    (onClickBtnEvent)="onClickBtnInitScreen()"
+  >
+  </app-init-screen>
+
+  <!--  Boot loading-->
   <app-loading-screen
     *ngIf="screen === 'boot-loading'"
     (loadingFinishEvent)="onBootLoadingFinished()"
@@ -22,5 +29,13 @@
     (welcomeScreenFinishEvent)="onWelcomeScreenFinished()"
   >
   </app-welcome-screen>
+
+  <!--  Desktop screen-->
+  <app-desktop-screen
+    [imgLoadFinish]="desktopScreenImgLoadFinish"
+    [isDesktopScreen]="screen === 'desktop-screen'"
+    (imgLoadFinishEvent)="onDesktopScreenImgLoadFinish()"
+  >
+  </app-desktop-screen>
 
 </div>

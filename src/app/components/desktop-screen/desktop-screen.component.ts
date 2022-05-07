@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-desktop-screen',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesktopScreenComponent implements OnInit {
 
+  @Input() isDesktopScreen = false;
+  @Input() imgLoadFinish = false;
+
+  @Output() imgLoadFinishEvent = new EventEmitter<void>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  /**
+   * When image load finish, emit the vent
+   * @param event
+   */
+  onImgLoadFinish(event: Event): void {
+    this.imgLoadFinishEvent.emit();
   }
 
 }
