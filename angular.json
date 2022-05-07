@@ -38,7 +38,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "src/win-xp.css"
             ],
             "scripts": []
           },
@@ -106,7 +107,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "src/styles.sass",
+              "src/win-xp.css"
             ],
             "scripts": []
           }
