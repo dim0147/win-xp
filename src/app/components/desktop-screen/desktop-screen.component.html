@@ -6,5 +6,8 @@
   <img
     src="assets/Win-XP/desktop-background.webp"
     alt=""
-    (load)="onImgLoadFinish($event)">
+    (load)="onImgLoadFinish($event)" />
+    <div style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; display: flex; justify-content: center; align-items: center;">
+      <button (click)="onExit()">Thanks for view the website, desktop still under development, click here to exit fullscreen</button>
+    </div>    
 </div>

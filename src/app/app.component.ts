@@ -1,3 +1,4 @@
+import { AudioService } from './services/audio.service';
 import { Component, OnInit } from '@angular/core';
 
 type Screen =
@@ -17,8 +18,11 @@ export class AppComponent implements OnInit {
   screen: Screen = 'init-screen';
   welcomeScreenImgLoadFinish: boolean = false;
   desktopScreenImgLoadFinish: boolean = false;
+  audioService: AudioService;
 
-  constructor() {}
+  constructor(audioService: AudioService) {
+    this.audioService = audioService;
+  }
 
   ngOnInit() {}
 
@@ -43,6 +47,7 @@ export class AppComponent implements OnInit {
    */
   onFlickerScreenFinished(): void {
     console.log('Flicker Screen Done');
+    this.audioService.playAudio("assets/Win-XP/Audio/Windows XP Startup.wav");
     this.screen = 'welcome-screen'; // Set next screen
   }
 
