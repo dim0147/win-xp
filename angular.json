@@ -41,7 +41,8 @@
               "src/styles.sass",
               "src/win-xp.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "baseHref": "./"
           },
           "configurations": {
             "production": {
